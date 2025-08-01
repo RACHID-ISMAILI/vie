@@ -114,7 +114,7 @@
     };
 
     firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
+    const auth = getAuth();
     const db = firebase.firestore();
 
     auth.signInAnonymously().then(() => {

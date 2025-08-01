@@ -5,12 +5,12 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  firebase.auth().signInWithEmailAndPassword(email, password)
+  getAuth().signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
       if (email === "admin@raun.com") {
         window.location.href = "portail-admin.html";
       } else {
-        firebase.auth().signOut().then(() => {
+        getAuth().signOut().then(() => {
           alert("Accès refusé : seul admin@raun.com est autorisé.");
         });
       }
