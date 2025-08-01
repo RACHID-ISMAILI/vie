@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Connexion Admin</title>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <script src="/scripts/firebase-config.js"></script>
+  <link rel="stylesheet" href="/styles/admin.css">
+</head>
+<body>
+  <a href="index.html">Retour à la page publique</a>
+  <div class="login-container">
+    <img src="media/98668701-bfde-444f-a239-8c481ae33338.jpg" class="admin-photo" />
+    <form id="loginForm">
+      <h2>Connexion Admin 🔐</h2>
+      <input type="email" id="email" placeholder="admin@raun.com" required />
+      <input type="password" id="password" placeholder="Mot de passe" required />
+      <button type="submit">Se connecter</button>
+    </form>
+  </div>
+  <script src="/scripts/auth-admin.js"></script>
+</body>
+</html>

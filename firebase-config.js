@@ -1,8 +1,15 @@
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+
 export const firebaseConfig = {
-  apiKey: "AIzaSyDRpjiF3EcSA_7TuGkNLp1bxu3iWoY_XnE",
-  authDomain: "raun2025-1558d.firebaseapp.com",
-  projectId: "raun2025-1558d",
-  storageBucket: "raun2025-1558d.appspot.com",
-  messagingSenderId: "133273741918",
-  appId: "1:133273741918:web:a32b098aac154e42a062cf"
+  apiKey: "AIzaSyCVeygP6hItCkEHR8xjJuI_PgsP9rHBSn8",
+  authDomain: "raun-vie.firebaseapp.com",
+  projectId: "raun-vie",
+  storageBucket: "raun-vie.firebasestorage.app",
+  messagingSenderId: "505471906569",
+  appId: "1:505471906569:web:348f3cd2802327adf299d8"
 };
+
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
