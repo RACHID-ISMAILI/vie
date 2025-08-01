@@ -1,30 +1,22 @@
+
 import { auth } from './firebase-config.js';
-import {
-  signInWithEmailAndPassword,
-  signOut
-} from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js';
+import { signInWithEmailAndPassword, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js';
+
+window.onload = () => {
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      document.getElementById("loginBox").style.display = "none";
+      document.getElementById("connectedBox").style.display = "block";
+    }
+  });
+};
 
 window.login = () => {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
-
   signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      if (user.email === "admin@raun.com") {
-        window.location.href = "ajouter-capsule.html";
-      } else {
-        alert("Accès refusé : vous n'êtes pas l'administrateur.");
-      }
+    .then(() => {
+      window.location.href = "ajouter-capsule.html";
     })
-    .catch((error) => {
-      alert("Erreur : " + error.message);
-    });
-};
-
-window.logout = () => {
-  signOut(auth).then(() => {
-    alert("Déconnecté avec succès.");
-    window.location.href = "admin.html";
-  });
+    .catch((error) => alert("Erreur : " + error.message));
 };
