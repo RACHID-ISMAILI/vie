@@ -1,20 +1,8 @@
 import { auth } from './firebase-config.js';
 import {
   signInWithEmailAndPassword,
-  onAuthStateChanged
+  signOut
 } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js';
-
-window.onload = () => {
-  onAuthStateChanged(auth, (user) => {
-    if (user && user.email === "admin@raun.com") {
-      // Si déjà connecté en tant qu'admin, rediriger vers la page admin
-      window.location.href = "ajouter-capsule.html";
-    } else {
-      // Sinon, afficher le formulaire de connexion
-      document.getElementById("loginBox").style.display = "block";
-    }
-  });
-};
 
 window.login = () => {
   const email = document.getElementById("email").value;
@@ -32,4 +20,11 @@ window.login = () => {
     .catch((error) => {
       alert("Erreur : " + error.message);
     });
+};
+
+window.logout = () => {
+  signOut(auth).then(() => {
+    alert("Déconnecté avec succès.");
+    window.location.href = "admin.html";
+  });
 };

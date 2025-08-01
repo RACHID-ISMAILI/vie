@@ -1,27 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Admin RAUN</title>
-  <link rel="stylesheet" href="style.css">
-  <script type="module" src="firebase-config.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion Admin</title>
   <script type="module" src="auth-admin.js"></script>
+  <style>
+    body { font-family: sans-serif; padding: 10px; }
+    input, button, textarea { width: 100%; max-width: 500px; font-size: 1rem; margin-bottom: 1em; }
+  </style>
 </head>
 <body>
-  <img src="photo.jpg" alt="Rachid" class="profile-photo">
-  <a href="index.html" class="retour">← Retour à l’accueil</a>
-
   <div id="loginBox">
-    <h2>Connexion Admin</h2>
-    <input type="email" id="email" placeholder="Email"><br>
+    <h2>Connexion Admin 🔐</h2>
+    <input type="email" id="email" placeholder="admin@raun.com"><br>
     <input type="password" id="password" placeholder="Mot de passe"><br>
     <button onclick="login()">Se connecter</button>
-  </div>
-
-  <div id="connectedBox" style="display: none;">
-    <p>✅ Vous êtes déjà connecté.</p>
-    <a href="ajouter-capsule.html">→ Accéder aux capsules</a>
   </div>
 </body>
 </html>
